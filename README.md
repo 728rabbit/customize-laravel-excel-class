@@ -1,3 +1,5 @@
+# Simple class to help you export data to excel format
+
 **Install maatwebsite/excel, version 3.1**
 
 1.  composer require maatwebsite/excel
@@ -71,4 +73,4 @@
 						'ID',
 						'Name'
 					]
-		])->doExport('user.xlsx', true);
+		])->doExport('user.xlsx', true);`
