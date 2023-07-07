@@ -5,6 +5,7 @@
 1.  composer require maatwebsite/excel
 
 2.  add to config/app.php
+   
 		'providers' => [
 			...
 			Maatwebsite\Excel\ExcelServiceProvider::class,
@@ -15,7 +16,7 @@
 			 'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 		]
 
-3.  composer update
+4.  composer update
 
 ------------
 
@@ -24,11 +25,11 @@
 1.  export excel with single sheet
 
 		return (new \App\Http\Controllers\ExcelSheet())->setData([
-	 		[
+			[
 				'id' => 1,
 				'name' => 'Chan Tai Man'
-	 		],
-	 		[
+			],
+			[
 				'id' => 2,
 				'name' => 'Lily Ho'
 			]
@@ -42,35 +43,35 @@
 		return (new \App\Http\Controllers\ExcelSheet())->setData([
 			'my_sheet_1' =>
 			[
-					[
-						'id' => 1,
-						'name' => 'Chan Tai Man'
-					],
-					[
-						'id' => 2,
-						'name' => 'Lily Ho'
-					]
+				[
+					'id' => 1,
+					'name' => 'Chan Tai Man'
+				],
+				[
+					'id' => 2,
+					'name' => 'Lily Ho'
+				]
 			],
 			'my_sheet_2' =>
 			[
-					[
-						'id' => 3,
-						'name' => 'Petter'
-					],
-					[
-						'id' => 4,
-						'name' => 'Jim'
-					]
+				[
+					'id' => 3,
+					'name' => 'Petter'
+				],
+				[
+					'id' => 4,
+					'name' => 'Jim'
+				]
 			]
 		])->setHeader([
-				'header_1' =>
-					[
-						'ID',
-						'Name'
-					],
-				'header_2' =>
-					[
-						'ID',
-						'Name'
-					]
+			'header_1' =>
+				[
+					'ID',
+					'Name'
+				],
+			'header_2' =>
+				[
+					'ID',
+					'Name'
+				]
 		])->doExport('user.xlsx', true);`
